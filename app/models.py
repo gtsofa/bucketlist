@@ -24,7 +24,7 @@ class Bucketlist(db.Model):
 
     def save(self):
         """
-        Save a bucketlist to the database
+        Add a new bucketlist to the database
         """
         db.session.add(self)
         db.session.commit()
@@ -39,13 +39,14 @@ class Bucketlist(db.Model):
 
     def delete(self):
         """
-        Delete a bucketlist
+        Delete an existing bucketlist from the DB
         """
         db.session.delete(self)
         db.session.commit()
 
     def __repr__(self):
         """
+        represents the object instance of the model whenever it is queries.
         Return a full formated bucketlist
         """
         return "<Bucketlist: {}>".format(self.name)
