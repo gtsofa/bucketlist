@@ -16,5 +16,10 @@ def create_app(config_name):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
+    # temporary route 
+    @app.route('/')
+    def hello_world():
+        return 'Hello world guys'
+
     return app
 
